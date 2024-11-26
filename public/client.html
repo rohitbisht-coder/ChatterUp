@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App UI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="form-container" id="form-container">
+      <form target="_self">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" />
+        </div>
+        <button id="login_btn" type="submit">Submit</button>
+      </form>
+    </div> 
+   
+
+    <div class="chat-app" id="chat-app" style="visibility: hidden;" >
+      <div class="chat-sidebar">
+        <h3 style="text-align: center">Connected Users</h3>
+        <div class="user-list" id="user-list">
+
+          <div class="user">
+          </div>
+        </div>
+      </div>
+      <div class="chat-window">
+        <div class="chat-header">
+          <p class="welcome-text" id="welcome-text"></p>
+          <p class="typing-status" id="typing-status"></p>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+        
+        </div>
+        <div class="chat-input">
+          <input
+            type="text"
+            placeholder="Enter your message..."
+            id="mesg_input"
+            oninput="typingFunc()"
+          />
+          <button id="send_msg">Send</button>
+        </div>
+      </div>
+    </div>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
